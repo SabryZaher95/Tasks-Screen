@@ -183,26 +183,26 @@ body{
 
 .progress-container{
   &.task-border-red{
-    @include progress-border(var(--red-status));
+    @include progress-border(var(--red-color));
   }
 }
 
 .progress-done{
-  .task-green{
+  &.task-green{
     @include progress-bg(var(--finished-status));
   }
 
 }
 
 .progress-done{
-  .task-blue{
+  &.task-blue{
     @include progress-bg(var(--running-status));
   }
 }
 
 .progress-done{
-  .task-red{
-    @include progress-bg(var(--red-status));
+  &.task-red{
+    @include progress-bg(var(--red-color));
   }
 }
 /***********************************************************/
