@@ -1,0 +1,10 @@
+<nav aria-label="page navigation example">
+  <ul class="pagination">
+    <li class="page-item" (click)="onClickPage(activePage - 1)" [ngClass]="{'disable': activePage == 1}"><a class="page-link">Previous</a></li>
+    <li class="page-item" [ngClass]="{'active': activePage === page}" *ngFor="let page of pages"(click)="onClickPage(page)">
+      <a class="page-link">{{page}}</a>
+    </li>
+    <li class="page-item" (click)="onClickPage(activePage + 1)" [ngClass]="{'disable': activePage == pages.length}"><a class="page-link">Next</a></li>
+  </ul>
+</nav>
+

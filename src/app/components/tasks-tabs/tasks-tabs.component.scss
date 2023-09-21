@@ -1,0 +1,38 @@
+.tab-link{
+  display: block;
+  text-align: left;
+  padding: 0.5rem 1rem;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #cbcbcb;
+  text-decoration: none;
+  border: 0;
+}
+
+.tab-link{
+  &.tab-active{
+    background-color: var(--bg-tab);
+    color:#fff;
+  }
+}
+
+.last:last-child{
+  position: relative;
+  border: 0;
+  &::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    clip-path: polygon(66% 0, 100% 0, 100% 100%);
+    width: 60%;
+    height: 100%;
+    background-color:#edeef0;
+  }
+}
+
+.bg-plus{
+  background-color: var(--bg-tab);
+  border: 1px solid #707070;
+}

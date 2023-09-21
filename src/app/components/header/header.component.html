@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg bg-white">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="tasks">
+      <img src="assets/images/logo-new.svg" class="w-100">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+        <!-- <li><img src="assets/images/path-689.svg" class="w-100 pe-3 notification"/></li> -->
+        <li>
+          <a class="text-decoration-none pe-3 notification">
+            <i class="fa-solid fa-bell fa-3x"></i>
+            <span class="notification-badge">{{tasksCount}}</span>
+          </a>
+        </li>
+        <div class="d-flex align-items-center bg-profile p-2 me-2">
+          <span class="pe-2"><i class="fa-solid fa-angle-down"></i></span>
+          <li><img src="assets/images/avatar-svgrepo-com.svg" class="w-100 pe-3"/></li>
+        </div>
+        <li><i class="fa-solid fa-bars fa-3x"></i></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+

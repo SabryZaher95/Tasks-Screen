@@ -1,0 +1,94 @@
+<div class="row gy-4">
+  <!---------------------------- Task Name ------------------------------->
+  <div class="col-lg-2 col-md-4 col-sm-6">
+    <div class="side-status end-line h-100 d-flex align-items-center" [ngClass]="rowStyle.status_class_name">
+      <div class="task-name me-4">
+        <span class="text-muted my-0 fs-md fw-bolder">Name</span>
+        <h2 class="text-70 h6 my-0 fw-bold">{{task.name}}</h2>
+        <p class="text-muted my-0 fs-sm fw-bold">{{task.id}}</p>
+      </div>
+    </div>
+  </div>
+  <!---------------------------- End Task Name --------------------------->
+
+  <!---------------------------- Task Status ----------------------------->
+  <div class="col-lg-2 col-md-4 col-sm-6">
+    <div class="h-100 end-line d-flex align-items-center">
+      <img [src]="rowStyle.status_img_url" style="height: 28px; width: 28px;" class="me-2" alt="Running">
+      <div class="task-status">
+        <span class="text-muted my-0 fs-md fw-bolder">Status</span>
+        <h3 class="h5 fw-bolder" [ngClass]="rowStyle.status_class_name">{{rowStyle.task_status_name}}</h3>
+      </div>
+    </div>
+  </div>
+  <!---------------------------- End Task Status ------------------------->
+
+  <!---------------------------- Task Date ------------------------------->
+  <div class="col-lg-2 col-md-4 col-sm-6">
+    <div class="h-100 end-line d-flex align-items-center">
+      <img src="../../../assets/images/date icon.svg" style="height: 28px; width: 28px;" class="me-2" alt="Creation Date">
+      <div class="task-date">
+        <span class="text-muted my-0 fs-md fw-bolder">Creation Date</span>
+        <p class="fs-6 fw-bold my-0">{{task.creation_date}}</p>
+      </div>
+    </div>
+  </div>
+  <!---------------------------- End Task Date --------------------------->
+
+  <!---------------------------- Selection Creteria CHBX ----------------->
+  <div class="col-lg-2 col-md-4 col-sm-6">
+    <div class="selection-crt end-line h-100 d-flex align-items-center">
+      <div class="task-selection">
+        <span class="text-muted my-0 fs-md fw-bolder">Selection Criteria</span>
+        <div *ngFor="let chbx of task.selection_criteria; let i = index;">
+          <div class="unstyled centere">
+            <input class="styled-checkbox" id="styled-checkbox-{{i + 1}}" type="checkbox" [value]="chbx">
+            <label for="styled-checkbox-{{i + 1}}" class="fs-md fw-bold">{{chbx}}</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!---------------------------- End Selection Creteria CHBX ------------->
+
+  <!---------------------------- Operations CHBX ------------------------->
+  <div class="col-lg-2 col-md-4 col-sm-6">
+    <div class="operations end-line h-100 d-flex align-items-center">
+      <div class="task-operations">
+        <span class="text-muted my-0 fs-md fw-bolder">Operations</span>
+        <div *ngFor="let chbx of task.operations | slice:0:2; let i = index;">
+          <div class="unstyled centere">
+            <input class="styled-checkbox" id="styled-checkbox-{{i + 1}}" type="checkbox" [value]="chbx">
+            <label for="styled-checkbox-{{i + 1}}" class="fs-md fw-bold">{{chbx}}</label>
+          </div>
+          <span class="text-muted fs-sm fw-bold ms-2" *ngIf="i >= 1 && task.operations.length > 2">... View More</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!---------------------------- End Operations CHBX --------------------->
+
+  <!---------------------------- Task Progress Bar ----------------------->
+  <div class="col-lg-2 col-md-4 col-sm-6">
+    <div class="row gx-0 h-100 align-items-center justify-conten-between">
+      <div class="col-lg-4 col-md-4 col-sm-4">
+        <div class="w-75 text-center vstack gap-1">
+          <span class="text-muted my-0 fs-md fw-bolder text-center ">Tsk(210)</span>
+          <div *ngFor="let tsk of task.task_progress; index as i;">
+            <div class="progress-container position-relative" [ngClass]="{'task-border-green': i === 0, 'task-border-blue': i === 1, 'task-border-red': i === 2}">
+              <span class="position-absolute start-50 top-50 translate-middle fs-sm fw-bolder">{{tsk}}</span>
+              <div class="progress-done" [style.width]="(tsk/210) | percent" [ngClass]="{'task-green': i === 0, 'task-blue': i === 1, 'task-red': i === 2}"></div>
+            </div>
+          </div>
+      </div>
+      </div>
+      <div class="col-lg-4 col-md-3 col-sm-3 me-3">
+        <div class="scheduled fs-sm fw-bolder text-white" *ngIf="task.scheduled">Scheduled</div>
+      </div>
+      <div class="col-lg-2 col-md-3 offset-sm-1 col-sm-3 scheduled-color" *ngIf="task.scheduled">
+        <i class="fa-solid fa-chevron-right fa-2x"></i>
+      </div>
+    </div>
+  </div>
+  <!---------------------------- End Task Progress Bar ------------------->
+</div>

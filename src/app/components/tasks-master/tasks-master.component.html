@@ -1,0 +1,28 @@
+<div class="container-fluid mb-4">
+  <div class="outer-border py-4 px-2 outer-border-shadow">
+    <div class="container-fluid">
+
+      <div class="row">
+        <!-------------------- Tasks Details ------------------------>
+        <div class="col vstack gap-2" >
+          <div class="task-detail gray-border-80" *ngFor="let task of PaginatedTasks; let i = index;" [style.background-color] = 'getRowStyle(PaginatedTasks, i).row_bg_color'>
+            <app-tasks-details [task]="task" [rowStyle]="getRowStyle(PaginatedTasks, i)"></app-tasks-details>
+          </div>
+        </div>
+        <!-------------------- End Tasks Details -------------------->
+
+        <!-------------------- Pagination Controls ------------------>
+        <div class="row mt-4">
+          <div class="col">
+            <div class="d-flex justify-content-center">
+              <app-pagination-controls [totalRecords]="allTasks.length" [recordsPerPage]="tasksPerPage" (onPageChange)="displayActivePage($event)"></app-pagination-controls>
+            </div>
+          </div>
+        </div>
+        <!-------------------- End Pagination Controls -------------->
+      </div>
+
+    </div>
+  </div>
+</div>
+
