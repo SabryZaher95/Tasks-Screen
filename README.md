@@ -2,6 +2,24 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.18.
 
+## Getting Started
+
+This is an Angular Project `Tasks Screen` to display and manage The tasks 
+
+## Prerequisites
+
+run `npm install`
+
+## Installation
+
+1. Clone the Repo `https://github.com/SabryZaher95/Tasks-Screen.git`
+2. Install NPM Packages `npm install`
+
+## Contact
+
+Sabry Zaher - `https://www.linkedin.com/in/sabry-zaher/` - `sabryzaher6@gmail.com`
+Project Link - `https://github.com/SabryZaher95/Tasks-Screen`
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
