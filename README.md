@@ -1,6 +1,6 @@
 # TasksScreen
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.18.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.6.
 
 ## Getting Started
 
