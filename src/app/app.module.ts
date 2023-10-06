@@ -22,7 +22,7 @@ import { TasksPageComponent } from './components/tasks-page/tasks-page.component
     PaginationControlsComponent,
     FooterComponent,
     TaskOperationsPipe,
-    TasksPageComponent
+    TasksPageComponent,
   ],
   imports: [
     BrowserModule,

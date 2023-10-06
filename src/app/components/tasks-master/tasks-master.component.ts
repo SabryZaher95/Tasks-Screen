@@ -34,11 +34,11 @@ export class TasksMasterComponent implements OnInit, AfterContentChecked  {
 
   getTasks(){
     this._TasksService.getTasks().subscribe({
-      next: result => {
+      next: (result: any) => {
         this.title.setTitle('ELSEWEDY Tasks');
         this.allTasks = result.data;
       },
-      error: err => console.log(err)
+      error: (err: any) => console.log(err)
     })
   }
 
